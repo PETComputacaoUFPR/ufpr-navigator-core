@@ -1,43 +1,27 @@
 import classroomData from "../data/classrooms.json" with { type: "json" };
+import { type Coordinate_t } from "./Place.ts";
+import { Building } from "./Building.ts";
 
 type Classroom_t = {
   id: number;
   name: string;
-  latitude: number;
-  longitude: number;
+  coordinate: Coordinate_t;
   building_id: number;
-};
-
-type Building_t = {
-  id: number;
-  name: string;
-  latitude: number;
-  longitude: number;
-  site: string;
-  address_id: number;
-  campus_id: number;
 };
 
 type ClassroomWithAccess_t = {
   id: number;
   name: string;
-  latitude: number;
-  longitude: number;
+  coordinate: Coordinate_t;
   building_name: string;
-  entrance_lat: number;
-  entrance_lng: number;
+  building_entrance: Coordinate_t;
 };
 
 export class Classroom {
   private static _classrooms: Classroom_t[] = classroomData.classrooms;
-  private static _buildings: Building_t[] = classroomData.buildings;
 
   static get classrooms(): Classroom_t[] {
     return Classroom._classrooms;
-  }
-
-  static get buildings(): Building_t[] {
-    return Classroom._buildings;
   }
 
   /**
@@ -59,20 +43,16 @@ export class Classroom {
 
     if (!result) return null;
 
-    const building = Classroom._buildings.find((b: Building_t) => {
-      return b.id === result.building_id;
-    });
+    const building = Building.getById(result.building_id);
 
     if (!building) return null;
 
     return {
       id: result.id,
       name: result.name,
-      latitude: result.latitude,
-      longitude: result.longitude,
+      coordinate: result.coordinate,
       building_name: building.name,
-      entrance_lat: building.latitude,
-      entrance_lng: building.longitude,
+      building_entrance: building.entrance,
     };
   }
 
@@ -87,16 +67,11 @@ export class Classroom {
    * @param {number} [limit=8]
    * @returns {Classroom_t[]}
    */
-  public static getSuggestions(
-    query: string,
-    limit: number = 8,
-  ): Classroom_t[] {
+  public static getSuggestions(query: string, limit: number = 8): Classroom_t[] {
     const queryTerm = this.normalizeForMatch(query);
     if (!queryTerm) return [];
 
-    const scored = this._classrooms.map((classroom) =>
-      this.scoreClassroom(classroom, queryTerm),
-    );
+    const scored = this._classrooms.map((classroom) => this.scoreClassroom(classroom, queryTerm));
 
     const filtered = scored.filter((suggestion) => suggestion.score > 0);
 
@@ -152,10 +127,7 @@ export class Classroom {
    * - 1: query presente, mas nao no comeco
    * - 0: sem correspondencia
    */
-  private static scoreClassroom(
-    classroom: Classroom_t,
-    query: string,
-  ): { classroom: Classroom_t; score: 0 | 1 | 2 } {
+  private static scoreClassroom(classroom: Classroom_t, query: string): { classroom: Classroom_t; score: 0 | 1 | 2 } {
     const normalizedName = this.normalizeForMatch(classroom.name);
 
     if (normalizedName.startsWith(query)) {

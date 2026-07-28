@@ -1,0 +1,138 @@
+{
+  "buildings": [
+    {
+      "id": 1,
+      "name": "Setor de Exatas (novo)",
+      "code": "PA",
+      "entrance": { "latitude": -25.450205, "longitude": -49.231167 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.450148, "longitude": -49.231193 },
+          { "latitude": -25.44999, "longitude": -49.231121 },
+          { "latitude": -25.45017, "longitude": -49.23051 },
+          { "latitude": -25.450558, "longitude": -49.230705 },
+          { "latitude": -25.450425, "longitude": -49.231085 },
+          { "latitude": -25.450461, "longitude": -49.231114 },
+          { "latitude": -25.450391, "longitude": -49.231299 },
+          { "latitude": -25.45022, "longitude": -49.231223 },
+          { "latitude": -25.450232, "longitude": -49.231181 },
+          { "latitude": -25.450175, "longitude": -49.231162 },
+          { "latitude": -25.450148, "longitude": -49.231193 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Setor de Exatas (velho)",
+      "code": "PC",
+      "entrance": { "latitude": -25.450754, "longitude": -49.231492 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.450996, "longitude": -49.231628 },
+          { "latitude": -25.450436, "longitude": -49.231351 },
+          { "latitude": -25.450515, "longitude": -49.231145 },
+          { "latitude": -25.45106, "longitude": -49.231421 },
+          { "latitude": -25.450996, "longitude": -49.231628 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Ciências da Terra",
+      "code": "CT",
+      "entrance": { "latitude": -25.451399, "longitude": -49.231772 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.451159, "longitude": -49.231708 },
+          { "latitude": -25.451247, "longitude": -49.231467 },
+          { "latitude": -25.451796, "longitude": -49.231745 },
+          { "latitude": -25.451718, "longitude": -49.231961 },
+          { "latitude": -25.451159, "longitude": -49.231708 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Prédio de Administração",
+      "code": "ADM",
+      "entrance": { "latitude": -25.450534, "longitude": -49.23231 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.450796, "longitude": -49.232159 },
+          { "latitude": -25.450514, "longitude": -49.232921 },
+          { "latitude": -25.450316, "longitude": -49.232828 },
+          { "latitude": -25.450596, "longitude": -49.232078 },
+          { "latitude": -25.450796, "longitude": -49.232159 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 5,
+      "name": "Biblioteca",
+      "code": "BIB",
+      "entrance": { "latitude": -25.450833, "longitude": -49.232448 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.450741, "longitude": -49.232621 },
+          { "latitude": -25.450996, "longitude": -49.231981 },
+          { "latitude": -25.451218, "longitude": -49.232082 },
+          { "latitude": -25.450979, "longitude": -49.232729 },
+          { "latitude": -25.450741, "longitude": -49.232621 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 6,
+      "name": "Laboratório da CT",
+      "code": "LAB-CT",
+      "entrance": { "latitude": -25.451394, "longitude": -49.231124 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.451431, "longitude": -49.231464 },
+          { "latitude": -25.451271, "longitude": -49.231383 },
+          { "latitude": -25.451476, "longitude": -49.230838 },
+          { "latitude": -25.451629, "longitude": -49.230903 },
+          { "latitude": -25.451431, "longitude": -49.231464 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 7,
+      "name": "Departamento de Informática",
+      "code": "DINF",
+      "entrance": { "latitude": -25.450763, "longitude": -49.231943 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.450284, "longitude": -49.231754 },
+          { "latitude": -25.450381, "longitude": -49.231517 },
+          { "latitude": -25.450969, "longitude": -49.231779 },
+          { "latitude": -25.450882, "longitude": -49.232035 },
+          { "latitude": -25.450284, "longitude": -49.231754 }
+        ]
+      },
+      "campus_id": 1
+    },
+    {
+      "id": 8,
+      "name": "Restaurante Universitário Poli",
+      "code": "RUPOLI",
+      "entrance": { "latitude": -25.449636, "longitude": -49.234894 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.449097, "longitude": -49.235188 },
+          { "latitude": -25.449266, "longitude": -49.234764 },
+          { "latitude": -25.449721, "longitude": -49.234952 },
+          { "latitude": -25.449591, "longitude": -49.235416 },
+          { "latitude": -25.449097, "longitude": -49.235188 }
+        ]
+      },
+      "campus_id": 1
+    }
+  ]
+}

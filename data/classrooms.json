@@ -1,38 +1,13 @@
 {
-  "campuses": [
-    { "id": 1, "name": "Centro Politécnico", "address_id": 1 }
-  ],
-  "addresses": [
-    {
-      "id": 1,
-      "zip": "81530015",
-      "state": "PR",
-      "city": "Curitiba",
-      "neighborhood": "Jardim das Américas",
-      "street": "R. Evaristo F. Ferreira da Costa",
-      "number": "408"
-    }
-  ],
-  "buildings": [
-    {
-      "id": 1,
-      "name": "Setor de Exatas UFPRENDE",
-      "latitude": -25.450209,
-      "longitude": -49.231163,
-      "site": "https://exatas.ufpr.br/",
-      "address_id": 1,
-      "campus_id": 1
-    }
-  ],
   "classrooms": [
-    { "id": 1, "name": "PA-01", "latitude": -25.4500892, "longitude": -49.2310481, "building_id": 1 },
-    { "id": 2, "name": "PA-02", "latitude": -25.4501901, "longitude": -49.2307789, "building_id": 1 },
-    { "id": 3, "name": "PA-03", "latitude": -25.4502293, "longitude": -49.2306774, "building_id": 1 },
-    { "id": 4, "name": "PA-04", "latitude": -25.4502862, "longitude": -49.2306441, "building_id": 1 },
-    { "id": 5, "name": "PA-05", "latitude": -25.4502207, "longitude": -49.2308194, "building_id": 1 },
-    { "id": 6, "name": "PA-06", "latitude": -25.4501871, "longitude": -49.2309071, "building_id": 1 },
-    { "id": 7, "name": "PA-07", "latitude": -25.4503268, "longitude": -49.2310013, "building_id": 1 },
-    { "id": 8, "name": "PA-08", "latitude": -25.4503707, "longitude": -49.2308822, "building_id": 1 },
-    { "id": 9, "name": "PA-09", "latitude": -25.450401,  "longitude": -49.2307555, "building_id": 1 }
+    { "id": 1, "name": "PA-01", "coordinate": { "latitude": -25.450089, "longitude": -49.231048 }, "building_id": 1 },
+    { "id": 2, "name": "PA-02", "coordinate": { "latitude": -25.45019, "longitude": -49.230779 }, "building_id": 1 },
+    { "id": 3, "name": "PA-03", "coordinate": { "latitude": -25.450229, "longitude": -49.230677 }, "building_id": 1 },
+    { "id": 4, "name": "PA-04", "coordinate": { "latitude": -25.450286, "longitude": -49.230644 }, "building_id": 1 },
+    { "id": 5, "name": "PA-05", "coordinate": { "latitude": -25.450221, "longitude": -49.230819 }, "building_id": 1 },
+    { "id": 6, "name": "PA-06", "coordinate": { "latitude": -25.450187, "longitude": -49.230907 }, "building_id": 1 },
+    { "id": 7, "name": "PA-07", "coordinate": { "latitude": -25.450327, "longitude": -49.231001 }, "building_id": 1 },
+    { "id": 8, "name": "PA-08", "coordinate": { "latitude": -25.450371, "longitude": -49.230882 }, "building_id": 1 },
+    { "id": 9, "name": "PA-09", "coordinate": { "latitude": -25.450401, "longitude": -49.230756 }, "building_id": 1 }
   ]
 }

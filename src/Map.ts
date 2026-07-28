@@ -1,4 +1,5 @@
 import L from "leaflet";
+import { type Coordinate_t } from "./Place.ts";
 
 // ===Tipos e interfaces para o formato de retorno do OSRM===
 type Geometry = {
@@ -77,8 +78,8 @@ export class Map {
    * @param label - Texto exibido na legenda do marcador (opcional)
    * @returns O marcador (`L.Marker`) adicionado
    */
-  public addMarker(lat: number, lng: number, label: string = ""): L.Marker {
-    const marker = L.marker([lat, lng]).bindTooltip(label, markerOptions);
+  public addMarker(coord: Coordinate_t, label: string = ""): L.Marker {
+    const marker = L.marker([coord.latitude, coord.longitude]).bindTooltip(label, markerOptions);
     marker.addTo(this.map);
     // this.map.setView([lat, lng], DEFAULT_ZOOM, { animate: true });
 
@@ -98,16 +99,12 @@ export class Map {
    * O mapa é ajustado automaticamente
    * para que toda a rota fique visível.
    *
-   * @param origin - Coordenadas de origem [latitude, longitude]
-   * @param destination - Coordenadas de destino [latitude, longitude]
-   * @param waypoint - (Opcional) Coordenadas da porta do predio do destino [latitude, longitude]
+   * @param origin - Coordenadas de origem
+   * @param destination - Coordenadas de destino
+   * @param waypoint - (Opcional) Coordenadas da porta do predio do destino
    * @returns Promise<void>
    */
-  public async drawRoute(
-    origin: [number, number], // [lat, lng]
-    destination: [number, number],
-    waypoint: [number, number] | null = null,
-  ) {
+  public async drawRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null) {
     this.removeRoute();
 
     const routeData = await this.getRoute(origin, destination, waypoint);
@@ -132,8 +129,7 @@ export class Map {
 
   private getBestRoute(routes: Route[]): Route {
     // adicionar steps no weight reduz obstáculos como atravessar rua, que não são levados em conta pelo OSRM
-    const weight = (route: Route) =>
-      route.distance + route.legs[0].steps.length * ROUTE_STEP_WEIGHT;
+    const weight = (route: Route) => route.distance + route.legs[0].steps.length * ROUTE_STEP_WEIGHT;
 
     let bestRoute = routes[0];
     let minWeight = weight(bestRoute);
@@ -151,12 +147,12 @@ export class Map {
   }
 
   private async getRoute(
-    origin: [number, number],
-    destination: [number, number],
-    waypoint: [number, number] | null = null,
+    origin: Coordinate_t,
+    destination: Coordinate_t,
+    waypoint: Coordinate_t | null = null,
   ): Promise<Route | null> {
     // formato para entrada na API OSRM
-    const toLngLat = ([lat, lng]: [number, number]) => `${lng},${lat}`;
+    const toLngLat = (coord: Coordinate_t) => `${coord.longitude},${coord.latitude}`;
 
     const coords = [
       toLngLat(origin),

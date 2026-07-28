@@ -1,0 +1,49 @@
+{
+  "campuses": [
+    {
+      "id": 1,
+      "name": "Politécnico",
+      "entrance": { "latitude": -25.45164, "longitude": -49.22998 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.453737, "longitude": -49.23304 },
+          { "latitude": -25.4539, "longitude": -49.232605 },
+          { "latitude": -25.453316, "longitude": -49.232257 },
+          { "latitude": -25.452283, "longitude": -49.230116 },
+          { "latitude": -25.45132, "longitude": -49.229881 },
+          { "latitude": -25.450794, "longitude": -49.229847 },
+          { "latitude": -25.448226, "longitude": -49.230188 },
+          { "latitude": -25.445387, "longitude": -49.232448 },
+          { "latitude": -25.446492, "longitude": -49.233975 },
+          { "latitude": -25.448507, "longitude": -49.234469 },
+          { "latitude": -25.448297, "longitude": -49.235047 },
+          { "latitude": -25.44989, "longitude": -49.23617 },
+          { "latitude": -25.450817, "longitude": -49.236862 },
+          { "latitude": -25.452064, "longitude": -49.238295 },
+          { "latitude": -25.453824, "longitude": -49.237017 },
+          { "latitude": -25.454964, "longitude": -49.238837 },
+          { "latitude": -25.457673, "longitude": -49.236989 },
+          { "latitude": -25.456748, "longitude": -49.235483 },
+          { "latitude": -25.455911, "longitude": -49.23615 },
+          { "latitude": -25.453302, "longitude": -49.234806 },
+          { "latitude": -25.453574, "longitude": -49.233117 },
+          { "latitude": -25.453737, "longitude": -49.23304 }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Botânico",
+      "entrance": { "latitude": -25.448165, "longitude": -49.235782 },
+      "polygon": {
+        "coordinates": [
+          { "latitude": -25.444407, "longitude": -49.240563 },
+          { "latitude": -25.444153, "longitude": -49.236276 },
+          { "latitude": -25.445542, "longitude": -49.234688 },
+          { "latitude": -25.451432, "longitude": -49.239349 },
+          { "latitude": -25.446336, "longitude": -49.240942 }
+        ]
+      }
+    }
+  ]
+}
