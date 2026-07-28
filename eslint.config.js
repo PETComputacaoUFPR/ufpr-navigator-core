@@ -17,7 +17,7 @@ export default defineConfig([
   eslintConfigPrettier,
   {
     rules: {
-      "@typescript-eslint/no-extraneous-class": "warn",
+      "@typescript-eslint/no-extraneous-class": "off",
     },
   },
 ]);

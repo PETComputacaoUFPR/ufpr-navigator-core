@@ -42,6 +42,7 @@ const routeOptions: L.GeoJSONOptions = {
 // numero maximo de marcadores, com excecao do de localizacao do usuario
 const MAX_MARKERS = 3;
 // const DEFAULT_ZOOM = 19;
+const ROUTE_STEP_WEIGHT = 15; // metros "equivalentes" por step no cálculo de rotas"
 
 export class Map {
   private map: L.Map;
@@ -130,15 +131,19 @@ export class Map {
   }
 
   private getBestRoute(routes: Route[]): Route {
+    // adicionar steps no weight reduz obstáculos como atravessar rua, que não são levados em conta pelo OSRM
+    const weight = (route: Route) =>
+      route.distance + route.legs[0].steps.length * ROUTE_STEP_WEIGHT;
+
     let bestRoute = routes[0];
-    let minSteps = bestRoute.legs[0].steps.length;
+    let minWeight = weight(bestRoute);
 
     for (let i = 1; i < routes.length; i++) {
-      const numSteps = routes[i].legs[0].steps.length;
+      const routeWeight = weight(routes[i]);
 
-      if (minSteps > numSteps) {
+      if (routeWeight < minWeight) {
         bestRoute = routes[i];
-        minSteps = numSteps;
+        minWeight = routeWeight;
       }
     }
 
