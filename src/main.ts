@@ -16,6 +16,7 @@ const map = new Map(mapaLeaflet);
 const sala1 = Classroom.find("pa5");
 
 if (sala1) {
+  console.log(sala1);
   // pontos de teste
   const sala: Coordinate_t = sala1.coordinate;
   const porta: Coordinate_t = sala1.building_entrance;
