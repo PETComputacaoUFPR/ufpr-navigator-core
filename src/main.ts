@@ -1,4 +1,4 @@
-import L from "leaflet";
+import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
 import { IndoorGraph } from "./IndoorGraph.ts"
@@ -14,7 +14,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const map = new Map(mapaLeaflet);
 
-const sala1 = Classroom.find("pa5");
+const sala1 = Classroom.find("pa8");
 
 if (sala1) {
   console.log(sala1);
@@ -36,13 +36,17 @@ if (sala1) {
   // const predioBiologicas: Coordinate_t = {latitude: -25.447748, longitude: -49.232832};
 
   // adiciona marcadores
-  map.addMarker(sala, "Origem");
+
+  const salaCorridor = await IndoorGraph.findNearestCorridor(1, sala);
+  console.log(salaCorridor);
+  if(salaCorridor)
+    map.addMarker(salaCorridor.coordinate, "PA-08");
   map.addMarker(porta, "Porta");
   if (escada) {
     console.log(escada);
     map.addMarker(escada.coordinate, "Escada");
   }
-  map.addMarker(restauranteUniversitario, "RU");
+  // map.addMarker(restauranteUniversitario, "RU");
   // mapa.addMarker(esponhaPeixe, "Espinha de peixe");
   // mapa.addMarker(predioBiologicas, "Biologicas");
 

@@ -1,4 +1,4 @@
-import L from "leaflet";
+import * as L from "leaflet";
 import { type Coordinate_t } from "./Place.ts";
 
 // ===Tipos e interfaces para o formato de retorno do OSRM===
@@ -28,9 +28,9 @@ interface OSRMResponse {
 // ===========
 
 const markerOptions: L.TooltipOptions = {
-  permanent: false,
+  permanent: true,
   direction: "top",
-  offset: [0, -10],
+  offset: [-15, -5],
 };
 
 const routeOptions: L.GeoJSONOptions = {
