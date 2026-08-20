@@ -52,13 +52,14 @@ export class Map {
   private _route: L.GeoJSON | null = null;
   private _routeData: Route | null = null;
   private _markers: L.Marker[] = [];
+  private _watchId: number | null = null;
 
   constructor(map: L.Map) {
     this.map = map;
   }
 
   get userCoords(): Coordinate_t | null {
-    if(!this._userCoords) return null;
+    if (!this._userCoords) return null;
     return this._userCoords;
   }
 
@@ -72,28 +73,46 @@ export class Map {
     return this._routeData.distance;
   }
 
+  /**
+   * Inicia o monitoramento da geolocalização do usuário.
+   *
+   * Se já houver um monitoramento ativo, ele é cancelado antes de iniciar um novo.
+   * Atualiza as coordenadas e o marcador do usuário no mapa a cada leitura válida.
+   *
+   * Uma leitura é considerada válida se a precisão for menor que 15 metros.
+   */
   public watchUserPosition(): void {
-    navigator.geolocation.watchPosition((success) => {
-      // console.log(success.coords.accuracy);
-      // checar precisão fora dos prédios
-      if(success.coords.accuracy > 10)
-        return;
+    if (!navigator.geolocation) {
+      console.error("Geolocalização não suportada");
+      return;
+    }
 
-      const coord: Coordinate_t = { latitude: success.coords.latitude , longitude: success.coords.longitude };
+    if (this._watchId) {
+      navigator.geolocation.clearWatch(this._watchId);
+    }
 
-      this._userCoords = coord;
+    this._watchId = navigator.geolocation.watchPosition(
+      (success) => {
+        // console.log(success.coords.accuracy);
+        // checar precisão fora dos prédios
+        if (success.coords.accuracy > 15) return;
 
-      if(this._userMarker)
-        this._userMarker.setLatLng([coord.latitude, coord.longitude]);
-      else {
-        // TODO: Mudar icone do marcador de usuario
-        const marker = L.marker([coord.latitude, coord.longitude]).bindTooltip("Você", markerOptions);
-        marker.addTo(this.map);
-        this.map.setView([coord.latitude, coord.longitude], DEFAULT_ZOOM, { animate: true });
-        this._userMarker = marker;
-      }
-    }, (error) => console.log("Erro na geolocalização", error),
-    {enableHighAccuracy: true})
+        const coord: Coordinate_t = { latitude: success.coords.latitude, longitude: success.coords.longitude };
+
+        this._userCoords = coord;
+
+        if (this._userMarker) this._userMarker.setLatLng([coord.latitude, coord.longitude]);
+        else {
+          // TODO: Mudar icone do marcador de usuario
+          const marker = L.marker([coord.latitude, coord.longitude]).bindTooltip("Você", markerOptions);
+          marker.addTo(this.map);
+          this.map.setView([coord.latitude, coord.longitude], DEFAULT_ZOOM, { animate: true });
+          this._userMarker = marker;
+        }
+      },
+      (error) => console.log("Erro na geolocalização", error),
+      { enableHighAccuracy: true, timeout: 5000, maximumAge: 2000 },
+    );
   }
 
   /**
@@ -134,7 +153,11 @@ export class Map {
    * @param waypoint - (Opcional) Coordenadas da porta do predio do destino
    * @returns Promise<void>
    */
-  public async drawRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null): Promise<void> {
+  public async drawRoute(
+    origin: Coordinate_t,
+    destination: Coordinate_t,
+    waypoint: Coordinate_t | null = null,
+  ): Promise<void> {
     this.removeRoute();
 
     const routeData = await this.getRoute(origin, destination, waypoint);
