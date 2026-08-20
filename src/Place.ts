@@ -9,7 +9,7 @@ export type Polygon_t = {
 
 /**
  * Calcula a distância entre dois pontos na superfície da Terra a partir da fórmula de Haversine
- * 
+ *
  * @param a Coordenadas de um ponto a
  * @param b Coordenadas de um ponto b
  * @returns Menor distância entre dois pontos na superfície da Terra
@@ -20,7 +20,7 @@ export function haversine(a: Coordinate_t, b: Coordinate_t): number {
   // latitude é um ângulo medido a partir da linha do equador, logo convertemos em radianos
   const lat1 = (a.latitude * Math.PI) / 180;
   const lat2 = (b.latitude * Math.PI) / 180;
-  // delta latitude e longitude também são convertidos em radianos 
+  // delta latitude e longitude também são convertidos em radianos
   const dLat = ((b.latitude - a.latitude) * Math.PI) / 180;
   const dLon = ((b.longitude - a.longitude) * Math.PI) / 180;
 

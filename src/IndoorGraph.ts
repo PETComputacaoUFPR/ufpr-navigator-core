@@ -97,7 +97,10 @@ export class IndoorGraph {
     const corridors = graph.nodes.filter((node) => {
       return node.type == NodeType.Corridor;
     });
-    const rankedCorridors = corridors.map((corridor) => ({ corridor, distance: haversine(corridor.coordinate, coord) }));
+    const rankedCorridors = corridors.map((corridor) => ({
+      corridor,
+      distance: haversine(corridor.coordinate, coord),
+    }));
     rankedCorridors.sort((a, b) => a.distance - b.distance);
 
     return rankedCorridors[0]?.corridor ?? null;

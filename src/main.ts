@@ -1,7 +1,7 @@
 import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
-import { IndoorGraph } from "./IndoorGraph.ts"
+import { IndoorGraph } from "./IndoorGraph.ts";
 import { type Coordinate_t } from "./Place.ts";
 import { Classroom } from "./Classroom.ts";
 import { formatDuration, addSecondsToCurrentTime } from "./timeUtils.ts";
@@ -23,7 +23,7 @@ if (sala1) {
   // pontos de teste
   const sala: Coordinate_t = sala1.coordinate;
   const porta: Coordinate_t = sala1.building_entrance;
-  const escada = (await IndoorGraph.findNearestStair(sala1.building_id)); 
+  const escada = await IndoorGraph.findNearestStair(sala1.building_id);
 
   // const petComp: Coordinate_t = {latitude: -25.450572, longitude: -49.231689};
   // const portaDinf: Coordinate_t = {latitude: -25.450763, longitude: -49.231946};
@@ -41,8 +41,7 @@ if (sala1) {
 
   const salaCorridor = await IndoorGraph.findNearestCorridor(1, sala);
   console.log(salaCorridor);
-  if(salaCorridor)
-    map.addMarker(salaCorridor.coordinate, "PA-08");
+  if (salaCorridor) map.addMarker(salaCorridor.coordinate, "PA-08");
   map.addMarker(porta, "Porta");
   if (escada) {
     console.log(escada);
