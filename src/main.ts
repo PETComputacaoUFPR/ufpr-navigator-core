@@ -14,6 +14,8 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const map = new Map(mapaLeaflet);
 
+map.watchUserPosition();
+
 const sala1 = Classroom.find("pa8");
 
 if (sala1) {
