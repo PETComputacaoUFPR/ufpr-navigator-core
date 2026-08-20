@@ -42,18 +42,24 @@ const routeOptions: L.GeoJSONOptions = {
 
 // numero maximo de marcadores, com excecao do de localizacao do usuario
 const MAX_MARKERS = 3;
-// const DEFAULT_ZOOM = 19;
+const DEFAULT_ZOOM = 19;
 const ROUTE_STEP_WEIGHT = 15; // metros "equivalentes" por step no cálculo de rotas"
 
 export class Map {
   private map: L.Map;
-  // private user_marker: L.Marker | null = null;
+  private _userMarker: L.Marker | null = null;
+  private _userCoords: Coordinate_t | null = null;
   private _route: L.GeoJSON | null = null;
   private _routeData: Route | null = null;
   private _markers: L.Marker[] = [];
 
   constructor(map: L.Map) {
     this.map = map;
+  }
+
+  get userCoords(): Coordinate_t | null {
+    if(!this._userCoords) return null;
+    return this._userCoords;
   }
 
   get routeDuration(): number | null {
@@ -64,6 +70,30 @@ export class Map {
   get routeDistance(): number | null {
     if (!this._routeData) return null;
     return this._routeData.distance;
+  }
+
+  public watchUserPosition(): void {
+    navigator.geolocation.watchPosition((success) => {
+      // console.log(success.coords.accuracy);
+      // checar precisão fora dos prédios
+      if(success.coords.accuracy > 10)
+        return;
+
+      const coord: Coordinate_t = { latitude: success.coords.latitude , longitude: success.coords.longitude };
+
+      this._userCoords = coord;
+
+      if(this._userMarker)
+        this._userMarker.setLatLng([coord.latitude, coord.longitude]);
+      else {
+        // TODO: Mudar icone do marcador de usuario
+        const marker = L.marker([coord.latitude, coord.longitude]).bindTooltip("Você", markerOptions);
+        marker.addTo(this.map);
+        this.map.setView([coord.latitude, coord.longitude], DEFAULT_ZOOM, { animate: true });
+        this._userMarker = marker;
+      }
+    }, (error) => console.log("Erro na geolocalização", error),
+    {enableHighAccuracy: true})
   }
 
   /**
@@ -104,7 +134,7 @@ export class Map {
    * @param waypoint - (Opcional) Coordenadas da porta do predio do destino
    * @returns Promise<void>
    */
-  public async drawRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null) {
+  public async drawRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null): Promise<void> {
     this.removeRoute();
 
     const routeData = await this.getRoute(origin, destination, waypoint);
@@ -120,7 +150,7 @@ export class Map {
     }
   }
 
-  private removeMarker() {
+  private removeMarker(): void {
     if (this._markers.length > 0) {
       this.map.removeLayer(this._markers[0]);
       this._markers.shift();
@@ -183,7 +213,7 @@ export class Map {
     }
   }
 
-  private removeRoute() {
+  private removeRoute(): void {
     if (this._route) {
       this.map.removeLayer(this._route);
       this._route = null;
