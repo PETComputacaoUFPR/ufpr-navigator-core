@@ -110,14 +110,13 @@ export class Classroom {
     const text = raw.trim().toLowerCase().replace(/\s+/g, "");
 
     if (!text.includes("-")) {
-      // tem que cumprir o molde pa2 ou pa02, guarda match[0] = "pa2" match[1] = 2
-      const match = text.match(/^pa(\d{1,2})$/);
+      // match[0] = "pa2", match[1] = "pa", match[2] = "2"
+      const match = text.match(/^([a-z]+)(\d{1,2})$/);
+      const prefix = match?.[1];
+      const num = match?.[2];
 
-      // se nao for nulo pegue o match[1], senao undefined
-      const num = match?.[1];
-      if (num) {
-        // se tiver digitado pa2, vira pa-02
-        return `pa-${num.length === 1 ? "0" + num : num}`;
+      if (prefix && num) {
+        return `${prefix}-${num.length === 1 ? "0" + num : num}`;
       }
     }
 
