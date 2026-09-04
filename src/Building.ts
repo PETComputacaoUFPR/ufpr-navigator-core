@@ -17,6 +17,12 @@ export class Building extends Place {
     return Building._buildings;
   }
 
+  public static getByCampusId(campusId: number): Building_t[] {
+    return Building._buildings.filter((building) => {
+      return building.campus_id == campusId;
+    });
+  }
+
   public static getById(buildingId: number): Building_t | null {
     return Building._buildings.find((b) => b.id == buildingId) ?? null;
   }
