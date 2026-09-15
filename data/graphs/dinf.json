@@ -1,105 +1,105 @@
 {
-	"building_id": 7,
-	"nodes": [
-		{
-			"id": "node_0",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4507629,
-				"longitude": -49.2319427
-			}
-		},
-		{
-			"id": "node_1",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4507985,
-				"longitude": -49.2318456
-			}
-		},
-		{
-			"id": "node_2",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4504161,
-				"longitude": -49.2316742
-			}
-		},
-		{
-			"id": "node_3",
-			"type": "stair",
-			"coordinate": {
-				"latitude": -25.4508194,
-				"longitude": -49.2317913
-			}
-		},
-		{
-			"id": "node_4",
-			"type": "stair",
-			"coordinate": {
-				"latitude": -25.4508357,
-				"longitude": -49.2317985
-			}
-		},
-		{
-			"id": "node_5",
-			"type": "stair",
-			"coordinate": {
-				"latitude": -25.4508291,
-				"longitude": -49.2318167
-			}
-		}
-	],
-	"edges": [
-		{
-			"from": "node_0",
-			"to": "node_1",
-			"weight": 10.522251459147638
-		},
-		{
-			"from": "node_1",
-			"to": "node_0",
-			"weight": 10.522251459147638
-		},
-		{
-			"from": "node_1",
-			"to": "node_2",
-			"weight": 45.871506149337414
-		},
-		{
-			"from": "node_2",
-			"to": "node_1",
-			"weight": 45.871506149337414
-		},
-		{
-			"from": "node_1",
-			"to": "node_3",
-			"weight": 5.926596958785757
-		},
-		{
-			"from": "node_3",
-			"to": "node_1",
-			"weight": 5.926596958785757
-		},
-		{
-			"from": "node_3",
-			"to": "node_4",
-			"weight": 1.9513280400637327
-		},
-		{
-			"from": "node_4",
-			"to": "node_3",
-			"weight": 1.9513280400637327
-		},
-		{
-			"from": "node_4",
-			"to": "node_5",
-			"weight": 1.9692168162413055
-		},
-		{
-			"from": "node_5",
-			"to": "node_4",
-			"weight": 1.9692168162413055
-		}
-	]
+  "building_id": 7,
+  "nodes": [
+    {
+      "id": "node_0",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4507629,
+        "longitude": -49.2319427
+      }
+    },
+    {
+      "id": "node_1",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4507985,
+        "longitude": -49.2318456
+      }
+    },
+    {
+      "id": "node_2",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4504161,
+        "longitude": -49.2316742
+      }
+    },
+    {
+      "id": "node_3",
+      "type": "stair",
+      "coordinate": {
+        "latitude": -25.4508194,
+        "longitude": -49.2317913
+      }
+    },
+    {
+      "id": "node_4",
+      "type": "stair",
+      "coordinate": {
+        "latitude": -25.4508357,
+        "longitude": -49.2317985
+      }
+    },
+    {
+      "id": "node_5",
+      "type": "stair",
+      "coordinate": {
+        "latitude": -25.4508291,
+        "longitude": -49.2318167
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "node_0",
+      "to": "node_1",
+      "weight": 10.522251459147638
+    },
+    {
+      "from": "node_1",
+      "to": "node_0",
+      "weight": 10.522251459147638
+    },
+    {
+      "from": "node_1",
+      "to": "node_2",
+      "weight": 45.871506149337414
+    },
+    {
+      "from": "node_2",
+      "to": "node_1",
+      "weight": 45.871506149337414
+    },
+    {
+      "from": "node_1",
+      "to": "node_3",
+      "weight": 5.926596958785757
+    },
+    {
+      "from": "node_3",
+      "to": "node_1",
+      "weight": 5.926596958785757
+    },
+    {
+      "from": "node_3",
+      "to": "node_4",
+      "weight": 1.9513280400637327
+    },
+    {
+      "from": "node_4",
+      "to": "node_3",
+      "weight": 1.9513280400637327
+    },
+    {
+      "from": "node_4",
+      "to": "node_5",
+      "weight": 1.9692168162413055
+    },
+    {
+      "from": "node_5",
+      "to": "node_4",
+      "weight": 1.9692168162413055
+    }
+  ]
 }

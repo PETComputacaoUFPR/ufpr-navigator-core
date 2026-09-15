@@ -1,331 +1,331 @@
 {
-	"building_id": 3,
-	"nodes": [
-		{
-			"id": "node_0",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514345,
-				"longitude": -49.2316734
-			}
-		},
-		{
-			"id": "node_1",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4512943,
-				"longitude": -49.2316103
-			}
-		},
-		{
-			"id": "node_2",
-			"type": "elevator",
-			"coordinate": {
-				"latitude": -25.4514962,
-				"longitude": -49.2316879
-			}
-		},
-		{
-			"id": "node_3",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4515201,
-				"longitude": -49.2317815
-			}
-		},
-		{
-			"id": "node_4",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4515332,
-				"longitude": -49.231746
-			}
-		},
-		{
-			"id": "node_5",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4515551,
-				"longitude": -49.2316864
-			}
-		},
-		{
-			"id": "node_6",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4515648,
-				"longitude": -49.23166
-			}
-		},
-		{
-			"id": "node_7",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4516671,
-				"longitude": -49.2318065
-			}
-		},
-		{
-			"id": "node_8",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4515048,
-				"longitude": -49.2316644
-			}
-		},
-		{
-			"id": "node_9",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514468,
-				"longitude": -49.2316391
-			}
-		},
-		{
-			"id": "node_10",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4513993,
-				"longitude": -49.2317719
-			}
-		},
-		{
-			"id": "node_11",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514126,
-				"longitude": -49.2317346
-			}
-		},
-		{
-			"id": "node_12",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514662,
-				"longitude": -49.2315854
-			}
-		},
-		{
-			"id": "node_13",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514995,
-				"longitude": -49.2317725
-			}
-		},
-		{
-			"id": "node_14",
-			"type": "corridor",
-			"coordinate": {
-				"latitude": -25.4514699,
-				"longitude": -49.2317593
-			}
-		},
-		{
-			"id": "node_15",
-			"type": "entrance",
-			"coordinate": {
-				"latitude": -25.4514806,
-				"longitude": -49.2318253
-			}
-		},
-		{
-			"id": "node_16",
-			"type": "stair",
-			"coordinate": {
-				"latitude": -25.4514841,
-				"longitude": -49.2317211
-			}
-		},
-		{
-			"id": "node_17",
-			"type": "stair",
-			"coordinate": {
-				"latitude": -25.4514599,
-				"longitude": -49.2317099
-			}
-		}
-	],
-	"edges": [
-		{
-			"from": "node_0",
-			"to": "node_1",
-			"weight": 16.82772280304113
-		},
-		{
-			"from": "node_1",
-			"to": "node_0",
-			"weight": 16.82772280304113
-		},
-		{
-			"from": "node_3",
-			"to": "node_4",
-			"weight": 3.8504875615553025
-		},
-		{
-			"from": "node_4",
-			"to": "node_3",
-			"weight": 3.8504875615553025
-		},
-		{
-			"from": "node_4",
-			"to": "node_5",
-			"weight": 6.460564678932274
-		},
-		{
-			"from": "node_5",
-			"to": "node_4",
-			"weight": 6.460564678932274
-		},
-		{
-			"from": "node_5",
-			"to": "node_6",
-			"weight": 2.8616981862681588
-		},
-		{
-			"from": "node_6",
-			"to": "node_5",
-			"weight": 2.8616981862681588
-		},
-		{
-			"from": "node_4",
-			"to": "node_7",
-			"weight": 16.080466150174196
-		},
-		{
-			"from": "node_7",
-			"to": "node_4",
-			"weight": 16.080466150174196
-		},
-		{
-			"from": "node_8",
-			"to": "node_2",
-			"weight": 2.5459039011203823
-		},
-		{
-			"from": "node_2",
-			"to": "node_8",
-			"weight": 2.5459039011203823
-		},
-		{
-			"from": "node_9",
-			"to": "node_8",
-			"weight": 6.931545664490739
-		},
-		{
-			"from": "node_8",
-			"to": "node_9",
-			"weight": 6.931545664490739
-		},
-		{
-			"from": "node_8",
-			"to": "node_5",
-			"weight": 6.013488656916164
-		},
-		{
-			"from": "node_5",
-			"to": "node_8",
-			"weight": 6.013488656916164
-		},
-		{
-			"from": "node_10",
-			"to": "node_11",
-			"weight": 4.026482679600522
-		},
-		{
-			"from": "node_11",
-			"to": "node_10",
-			"weight": 4.026482679600522
-		},
-		{
-			"from": "node_11",
-			"to": "node_0",
-			"weight": 6.609644505145044
-		},
-		{
-			"from": "node_0",
-			"to": "node_11",
-			"weight": 6.609644505145044
-		},
-		{
-			"from": "node_0",
-			"to": "node_9",
-			"weight": 3.705489807788535
-		},
-		{
-			"from": "node_9",
-			"to": "node_0",
-			"weight": 3.705489807788535
-		},
-		{
-			"from": "node_9",
-			"to": "node_12",
-			"weight": 5.807199521198996
-		},
-		{
-			"from": "node_12",
-			"to": "node_9",
-			"weight": 5.807199521198996
-		},
-		{
-			"from": "node_3",
-			"to": "node_13",
-			"weight": 2.4624142704175123
-		},
-		{
-			"from": "node_13",
-			"to": "node_3",
-			"weight": 2.4624142704175123
-		},
-		{
-			"from": "node_13",
-			"to": "node_14",
-			"weight": 3.5481877450181947
-		},
-		{
-			"from": "node_14",
-			"to": "node_13",
-			"weight": 3.5481877450181947
-		},
-		{
-			"from": "node_14",
-			"to": "node_11",
-			"weight": 6.837102916053236
-		},
-		{
-			"from": "node_11",
-			"to": "node_14",
-			"weight": 6.837102916053236
-		},
-		{
-			"from": "node_14",
-			"to": "node_16",
-			"weight": 4.147717331592089
-		},
-		{
-			"from": "node_16",
-			"to": "node_14",
-			"weight": 4.147717331592089
-		},
-		{
-			"from": "node_16",
-			"to": "node_17",
-			"weight": 2.9164362264216215
-		},
-		{
-			"from": "node_17",
-			"to": "node_16",
-			"weight": 2.9164362264216215
-		},
-		{
-			"from": "node_15",
-			"to": "node_13",
-			"weight": 5.702676691018591
-		},
-		{
-			"from": "node_13",
-			"to": "node_15",
-			"weight": 5.702676691018591
-		}
-	]
+  "building_id": 3,
+  "nodes": [
+    {
+      "id": "node_0",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514345,
+        "longitude": -49.2316734
+      }
+    },
+    {
+      "id": "node_1",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4512943,
+        "longitude": -49.2316103
+      }
+    },
+    {
+      "id": "node_2",
+      "type": "elevator",
+      "coordinate": {
+        "latitude": -25.4514962,
+        "longitude": -49.2316879
+      }
+    },
+    {
+      "id": "node_3",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4515201,
+        "longitude": -49.2317815
+      }
+    },
+    {
+      "id": "node_4",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4515332,
+        "longitude": -49.231746
+      }
+    },
+    {
+      "id": "node_5",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4515551,
+        "longitude": -49.2316864
+      }
+    },
+    {
+      "id": "node_6",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4515648,
+        "longitude": -49.23166
+      }
+    },
+    {
+      "id": "node_7",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4516671,
+        "longitude": -49.2318065
+      }
+    },
+    {
+      "id": "node_8",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4515048,
+        "longitude": -49.2316644
+      }
+    },
+    {
+      "id": "node_9",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514468,
+        "longitude": -49.2316391
+      }
+    },
+    {
+      "id": "node_10",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4513993,
+        "longitude": -49.2317719
+      }
+    },
+    {
+      "id": "node_11",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514126,
+        "longitude": -49.2317346
+      }
+    },
+    {
+      "id": "node_12",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514662,
+        "longitude": -49.2315854
+      }
+    },
+    {
+      "id": "node_13",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514995,
+        "longitude": -49.2317725
+      }
+    },
+    {
+      "id": "node_14",
+      "type": "corridor",
+      "coordinate": {
+        "latitude": -25.4514699,
+        "longitude": -49.2317593
+      }
+    },
+    {
+      "id": "node_15",
+      "type": "entrance",
+      "coordinate": {
+        "latitude": -25.4514806,
+        "longitude": -49.2318253
+      }
+    },
+    {
+      "id": "node_16",
+      "type": "stair",
+      "coordinate": {
+        "latitude": -25.4514841,
+        "longitude": -49.2317211
+      }
+    },
+    {
+      "id": "node_17",
+      "type": "stair",
+      "coordinate": {
+        "latitude": -25.4514599,
+        "longitude": -49.2317099
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "node_0",
+      "to": "node_1",
+      "weight": 16.82772280304113
+    },
+    {
+      "from": "node_1",
+      "to": "node_0",
+      "weight": 16.82772280304113
+    },
+    {
+      "from": "node_3",
+      "to": "node_4",
+      "weight": 3.8504875615553025
+    },
+    {
+      "from": "node_4",
+      "to": "node_3",
+      "weight": 3.8504875615553025
+    },
+    {
+      "from": "node_4",
+      "to": "node_5",
+      "weight": 6.460564678932274
+    },
+    {
+      "from": "node_5",
+      "to": "node_4",
+      "weight": 6.460564678932274
+    },
+    {
+      "from": "node_5",
+      "to": "node_6",
+      "weight": 2.8616981862681588
+    },
+    {
+      "from": "node_6",
+      "to": "node_5",
+      "weight": 2.8616981862681588
+    },
+    {
+      "from": "node_4",
+      "to": "node_7",
+      "weight": 16.080466150174196
+    },
+    {
+      "from": "node_7",
+      "to": "node_4",
+      "weight": 16.080466150174196
+    },
+    {
+      "from": "node_8",
+      "to": "node_2",
+      "weight": 2.5459039011203823
+    },
+    {
+      "from": "node_2",
+      "to": "node_8",
+      "weight": 2.5459039011203823
+    },
+    {
+      "from": "node_9",
+      "to": "node_8",
+      "weight": 6.931545664490739
+    },
+    {
+      "from": "node_8",
+      "to": "node_9",
+      "weight": 6.931545664490739
+    },
+    {
+      "from": "node_8",
+      "to": "node_5",
+      "weight": 6.013488656916164
+    },
+    {
+      "from": "node_5",
+      "to": "node_8",
+      "weight": 6.013488656916164
+    },
+    {
+      "from": "node_10",
+      "to": "node_11",
+      "weight": 4.026482679600522
+    },
+    {
+      "from": "node_11",
+      "to": "node_10",
+      "weight": 4.026482679600522
+    },
+    {
+      "from": "node_11",
+      "to": "node_0",
+      "weight": 6.609644505145044
+    },
+    {
+      "from": "node_0",
+      "to": "node_11",
+      "weight": 6.609644505145044
+    },
+    {
+      "from": "node_0",
+      "to": "node_9",
+      "weight": 3.705489807788535
+    },
+    {
+      "from": "node_9",
+      "to": "node_0",
+      "weight": 3.705489807788535
+    },
+    {
+      "from": "node_9",
+      "to": "node_12",
+      "weight": 5.807199521198996
+    },
+    {
+      "from": "node_12",
+      "to": "node_9",
+      "weight": 5.807199521198996
+    },
+    {
+      "from": "node_3",
+      "to": "node_13",
+      "weight": 2.4624142704175123
+    },
+    {
+      "from": "node_13",
+      "to": "node_3",
+      "weight": 2.4624142704175123
+    },
+    {
+      "from": "node_13",
+      "to": "node_14",
+      "weight": 3.5481877450181947
+    },
+    {
+      "from": "node_14",
+      "to": "node_13",
+      "weight": 3.5481877450181947
+    },
+    {
+      "from": "node_14",
+      "to": "node_11",
+      "weight": 6.837102916053236
+    },
+    {
+      "from": "node_11",
+      "to": "node_14",
+      "weight": 6.837102916053236
+    },
+    {
+      "from": "node_14",
+      "to": "node_16",
+      "weight": 4.147717331592089
+    },
+    {
+      "from": "node_16",
+      "to": "node_14",
+      "weight": 4.147717331592089
+    },
+    {
+      "from": "node_16",
+      "to": "node_17",
+      "weight": 2.9164362264216215
+    },
+    {
+      "from": "node_17",
+      "to": "node_16",
+      "weight": 2.9164362264216215
+    },
+    {
+      "from": "node_15",
+      "to": "node_13",
+      "weight": 5.702676691018591
+    },
+    {
+      "from": "node_13",
+      "to": "node_15",
+      "weight": 5.702676691018591
+    }
+  ]
 }

@@ -25,11 +25,14 @@ export class IndoorGraph {
     if (!building) return null;
 
     const code = building.code.toLowerCase();
-    const data = (await import(`../data/graphs/${code}.json`, { with: { type: "json" } })) as { default: Graph_t };
+    try {
+      const data = (await import(`../data/graphs/${code}.json`, { with: { type: "json" } })) as { default: Graph_t };
+      IndoorGraph._cache.set(buildingId, data.default);
 
-    IndoorGraph._cache.set(buildingId, data.default);
-
-    return data.default;
+      return data.default;
+    } catch {
+      return null;
+    }
   }
 
   /**

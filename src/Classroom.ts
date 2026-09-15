@@ -17,7 +17,7 @@ type ClassroomWithAccess_t = {
   floor: number;
   building_id: number;
   building_name: string;
-  building_entrances: Coordinate_t[];
+  building_entrance: Coordinate_t;
 };
 
 export class Classroom {
@@ -47,8 +47,10 @@ export class Classroom {
     if (!result) return null;
 
     const building = Building.getById(result.building_id);
-
     if (!building) return null;
+
+    const entrance = Building.getNearestEntrance(building.id, result.coordinate);
+    if (!entrance) return null;
 
     return {
       id: result.id,
@@ -57,7 +59,7 @@ export class Classroom {
       floor: result.floor,
       building_id: building.id,
       building_name: building.name,
-      building_entrances: building.entrances,
+      building_entrance: entrance,
     };
   }
 
@@ -102,12 +104,23 @@ export class Classroom {
    * @returns {string}
    */
   private static normalizeForMatch(raw: string): string {
-    return raw.trim().toLowerCase().replace(/\s+/g, "").replace(/-/g, "");
+    return raw
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .replace(/[-.]/g, "");
   }
 
   private static normalizeClassroom(raw: string): string {
     // remove espaços no começo, fim e meio
-    const text = raw.trim().toLowerCase().replace(/\s+/g, "");
+    const text = raw
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "");
 
     if (!text.includes("-")) {
       // match[0] = "pa2", match[1] = "pa", match[2] = "2"

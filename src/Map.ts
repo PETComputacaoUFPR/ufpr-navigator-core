@@ -153,11 +153,7 @@ export class Map {
    * @param waypoint - (Opcional) Coordenadas da porta do predio do destino
    * @returns Promise<void>
    */
-  public async drawRoute(
-    origin: Coordinate_t,
-    destination: Coordinate_t,
-    waypoint: Coordinate_t | null = null,
-  ): Promise<void> {
+  public async drawRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null): Promise<void> {
     this.removeRoute();
 
     const routeData = await this.getRoute(origin, destination, waypoint);
@@ -199,11 +195,7 @@ export class Map {
     return bestRoute;
   }
 
-  private async getRoute(
-    origin: Coordinate_t,
-    destination: Coordinate_t,
-    waypoint: Coordinate_t | null = null,
-  ): Promise<Route | null> {
+  private async getRoute(origin: Coordinate_t, destination: Coordinate_t, waypoint: Coordinate_t | null = null): Promise<Route | null> {
     // formato para entrada na API OSRM
     const toLngLat = (coord: Coordinate_t) => `${coord.longitude},${coord.latitude}`;
 

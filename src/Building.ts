@@ -27,9 +27,9 @@ export class Building extends Place {
     return Building._buildings.find((b) => b.id == buildingId) ?? null;
   }
 
-  public static getNearestEntrance(buildingId: number, coord: Coordinate_t): Coordinate_t | null{
+  public static getNearestEntrance(buildingId: number, coord: Coordinate_t): Coordinate_t | null {
     const building = Building.getById(buildingId);
-    if(!building) return null;
+    if (!building) return null;
 
     const rankedEntrances = building.entrances.map((entrance) => ({
       entrance,
