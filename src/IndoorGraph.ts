@@ -67,7 +67,7 @@ export class IndoorGraph {
    * @param buildingId Id do prédio em buildings.json
    * @returns GraphNode_t da escada ou null se não encontrado
    */
-  public static async findNearestStair(buildingId: number): Promise<GraphNode_t | null> {
+  public static async findNearestStair(buildingId: number, buildingEntrance: Coordinate_t): Promise<GraphNode_t | null> {
     const graph = await IndoorGraph.getGraphByBuildingId(buildingId);
     if (!graph) return null;
 
@@ -77,7 +77,7 @@ export class IndoorGraph {
     const stairs = graph.nodes.filter((node) => {
       return node.type == NodeType.Stair;
     });
-    const rankedStairs = stairs.map((stair) => ({ stair, distance: haversine(stair.coordinate, building.entrance) }));
+    const rankedStairs = stairs.map((stair) => ({ stair, distance: haversine(stair.coordinate, buildingEntrance) }));
     rankedStairs.sort((a, b) => a.distance - b.distance);
 
     return rankedStairs[0]?.stair ?? null;

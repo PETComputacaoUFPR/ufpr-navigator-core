@@ -2,8 +2,8 @@ import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
 import { IndoorGraph } from "./IndoorGraph.ts";
-import { type Coordinate_t } from "./Place.ts";
 import { Classroom } from "./Classroom.ts";
+import { Building } from "./Building.ts"
 import { formatDuration, addSecondsToCurrentTime } from "./timeUtils.ts";
 
 const mapaLeaflet = L.map("map").setView([-25.450223, -49.233239], 16);
@@ -16,50 +16,51 @@ const map = new Map(mapaLeaflet);
 
 map.watchUserPosition();
 
-const sala1 = Classroom.find("pa8");
+const sala = Classroom.find("ph8");
+const restauranteUniversitario = Classroom.find("ru");
 
-if (sala1) {
-  console.log(sala1);
+if (sala && restauranteUniversitario) {
+  console.log(sala);
+
   // pontos de teste
-  const sala: Coordinate_t = sala1.coordinate;
-  const porta: Coordinate_t = sala1.building_entrance;
-  const escada = await IndoorGraph.findNearestStair(sala1.building_id);
+  const porta = Building.getNearestEntrance(sala.building_id, sala.coordinate);
 
-  // const petComp: Coordinate_t = {latitude: -25.450572, longitude: -49.231689};
-  // const portaDinf: Coordinate_t = {latitude: -25.450763, longitude: -49.231946};
+  if(porta) {
+    const escada = await IndoorGraph.findNearestStair(sala.building_id, porta);
 
-  // Coordenadas RU
-  const restauranteUniversitario: Coordinate_t = { latitude: -25.449574201159372, longitude: -49.23486827142011 };
+    // const petComp: Coordinate_t = {latitude: -25.450572, longitude: -49.231689};
+    // const portaDinf: Coordinate_t = {latitude: -25.450763, longitude: -49.231946};
 
-  // Coordenadas Espinha de Peixe
-  // const espinhaPeixe: Coordinate_t = {latitude: -25.453075, longitude: -49.233212};
+    // Coordenadas Espinha de Peixe
+    // const espinhaPeixe: Coordinate_t = {latitude: -25.453075, longitude: -49.233212};
 
-  // Coordenadas Biológicas
-  // const predioBiologicas: Coordinate_t = {latitude: -25.447748, longitude: -49.232832};
+    // Coordenadas Biológicas
+    // const predioBiologicas: Coordinate_t = {latitude: -25.447748, longitude: -49.232832};
 
-  // adiciona marcadores
+    // adiciona marcadores
 
-  const salaCorridor = await IndoorGraph.findNearestCorridor(1, sala);
-  console.log(salaCorridor);
-  if (salaCorridor) map.addMarker(salaCorridor.coordinate, "PA-08");
-  map.addMarker(porta, "Porta");
-  if (escada) {
-    console.log(escada);
-    map.addMarker(escada.coordinate, "Escada");
-  }
-  // map.addMarker(restauranteUniversitario, "RU");
-  // mapa.addMarker(esponhaPeixe, "Espinha de peixe");
-  // mapa.addMarker(predioBiologicas, "Biologicas");
+    const salaCorridor = await IndoorGraph.findNearestCorridor(sala.building_id, sala.coordinate);
+    console.log(salaCorridor);
+    if (salaCorridor) map.addMarker(salaCorridor.coordinate, sala.name);
+    map.addMarker(porta, "Porta");
+    if (escada) {
+      console.log(escada);
+      map.addMarker(escada.coordinate, "Escada");
+    }
+    // map.addMarker(restauranteUniversitario, "RU");
+    // mapa.addMarker(esponhaPeixe, "Espinha de peixe");
+    // mapa.addMarker(predioBiologicas, "Biologicas");
 
-  // PET para porta da PA
-  // await map.drawRoute(porta, portaDinf);
+    // PET para porta da PA
+    // await map.drawRoute(porta, portaDinf);
 
-  // PA para RU
-  await map.drawRoute(porta, restauranteUniversitario);
+    // PA para RU
+    await map.drawRoute(porta, restauranteUniversitario.coordinate);
 
-  if (map.routeDuration && map.routeDistance) {
-    console.log("Tempo: " + formatDuration(map.routeDuration));
-    console.log("Tempo de chegada: " + addSecondsToCurrentTime(map.routeDuration));
-    console.log("Distância: " + map.routeDistance + " m");
+    if (map.routeDuration && map.routeDistance) {
+      console.log("Tempo: " + formatDuration(map.routeDuration));
+      console.log("Tempo de chegada: " + addSecondsToCurrentTime(map.routeDuration));
+      console.log("Distância: " + map.routeDistance + " m");
+    }
   }
 }

@@ -1,138 +1,276 @@
 {
-  "buildings": [
-    {
-      "id": 1,
-      "name": "Setor de Exatas (novo)",
-      "code": "PA",
-      "entrance": { "latitude": -25.450205, "longitude": -49.231167 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.450148, "longitude": -49.231193 },
-          { "latitude": -25.44999, "longitude": -49.231121 },
-          { "latitude": -25.45017, "longitude": -49.23051 },
-          { "latitude": -25.450558, "longitude": -49.230705 },
-          { "latitude": -25.450425, "longitude": -49.231085 },
-          { "latitude": -25.450461, "longitude": -49.231114 },
-          { "latitude": -25.450391, "longitude": -49.231299 },
-          { "latitude": -25.45022, "longitude": -49.231223 },
-          { "latitude": -25.450232, "longitude": -49.231181 },
-          { "latitude": -25.450175, "longitude": -49.231162 },
-          { "latitude": -25.450148, "longitude": -49.231193 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Setor de Exatas (velho)",
-      "code": "PC",
-      "entrance": { "latitude": -25.450754, "longitude": -49.231492 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.450996, "longitude": -49.231628 },
-          { "latitude": -25.450436, "longitude": -49.231351 },
-          { "latitude": -25.450515, "longitude": -49.231145 },
-          { "latitude": -25.45106, "longitude": -49.231421 },
-          { "latitude": -25.450996, "longitude": -49.231628 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Ciências da Terra",
-      "code": "CT",
-      "entrance": { "latitude": -25.451399, "longitude": -49.231772 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.451159, "longitude": -49.231708 },
-          { "latitude": -25.451247, "longitude": -49.231467 },
-          { "latitude": -25.451796, "longitude": -49.231745 },
-          { "latitude": -25.451718, "longitude": -49.231961 },
-          { "latitude": -25.451159, "longitude": -49.231708 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Prédio de Administração",
-      "code": "ADM",
-      "entrance": { "latitude": -25.450534, "longitude": -49.23231 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.450796, "longitude": -49.232159 },
-          { "latitude": -25.450514, "longitude": -49.232921 },
-          { "latitude": -25.450316, "longitude": -49.232828 },
-          { "latitude": -25.450596, "longitude": -49.232078 },
-          { "latitude": -25.450796, "longitude": -49.232159 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 5,
-      "name": "Biblioteca",
-      "code": "BIB",
-      "entrance": { "latitude": -25.450833, "longitude": -49.232448 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.450741, "longitude": -49.232621 },
-          { "latitude": -25.450996, "longitude": -49.231981 },
-          { "latitude": -25.451218, "longitude": -49.232082 },
-          { "latitude": -25.450979, "longitude": -49.232729 },
-          { "latitude": -25.450741, "longitude": -49.232621 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 6,
-      "name": "Laboratório da CT",
-      "code": "LAB-CT",
-      "entrance": { "latitude": -25.451394, "longitude": -49.231124 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.451431, "longitude": -49.231464 },
-          { "latitude": -25.451271, "longitude": -49.231383 },
-          { "latitude": -25.451476, "longitude": -49.230838 },
-          { "latitude": -25.451629, "longitude": -49.230903 },
-          { "latitude": -25.451431, "longitude": -49.231464 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 7,
-      "name": "Departamento de Informática",
-      "code": "DINF",
-      "entrance": { "latitude": -25.450763, "longitude": -49.231943 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.450284, "longitude": -49.231754 },
-          { "latitude": -25.450381, "longitude": -49.231517 },
-          { "latitude": -25.450969, "longitude": -49.231779 },
-          { "latitude": -25.450882, "longitude": -49.232035 },
-          { "latitude": -25.450284, "longitude": -49.231754 }
-        ]
-      },
-      "campus_id": 1
-    },
-    {
-      "id": 8,
-      "name": "Restaurante Universitário Poli",
-      "code": "RUPOLI",
-      "entrance": { "latitude": -25.449636, "longitude": -49.234894 },
-      "polygon": {
-        "coordinates": [
-          { "latitude": -25.449097, "longitude": -49.235188 },
-          { "latitude": -25.449266, "longitude": -49.234764 },
-          { "latitude": -25.449721, "longitude": -49.234952 },
-          { "latitude": -25.449591, "longitude": -49.235416 },
-          { "latitude": -25.449097, "longitude": -49.235188 }
-        ]
-      },
-      "campus_id": 1
-    }
-  ]
+	"buildings": [
+		{
+			"id": 1,
+			"name": "Setor de Exatas (novo)",
+			"code": "PA",
+			"entrances": [ {"latitude": -25.450205, "longitude": -49.231167 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450148, "longitude": -49.231193 },
+					{ "latitude": -25.449990, "longitude": -49.231121 },
+					{ "latitude": -25.450170, "longitude": -49.230510 },
+					{ "latitude": -25.450558, "longitude": -49.230705 },
+					{ "latitude": -25.450425, "longitude": -49.231085 },
+					{ "latitude": -25.450461, "longitude": -49.231114 },
+					{ "latitude": -25.450391, "longitude": -49.231299 },
+					{ "latitude": -25.450220, "longitude": -49.231223 },
+					{ "latitude": -25.450232, "longitude": -49.231181 },
+					{ "latitude": -25.450175, "longitude": -49.231162 },
+					{ "latitude": -25.450148, "longitude": -49.231193 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 2,
+			"name": "Setor de Exatas (velho)",
+			"code": "PC",
+			"entrances": [ {"latitude": -25.450754, "longitude": -49.231492 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450996, "longitude": -49.231628 },
+					{ "latitude": -25.450436, "longitude": -49.231351 },
+					{ "latitude": -25.450515, "longitude": -49.231145 },
+					{ "latitude": -25.451060, "longitude": -49.231421 },
+					{ "latitude": -25.450996, "longitude": -49.231628 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 3,
+			"name": "Ciências da Terra",
+			"code": "CT",
+			"entrances": [ {"latitude": -25.451399, "longitude": -49.231772 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.451159, "longitude": -49.231708 },
+					{ "latitude": -25.451247, "longitude": -49.231467 },
+					{ "latitude": -25.451796, "longitude": -49.231745 },
+					{ "latitude": -25.451718, "longitude": -49.231961 },
+					{ "latitude": -25.451159, "longitude": -49.231708 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 4,
+			"name": "Prédio de Administração",
+			"code": "ADM",
+			"entrances": [ {"latitude": -25.450534, "longitude": -49.232310 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450796, "longitude": -49.232159 },
+					{ "latitude": -25.450514, "longitude": -49.232921 },
+					{ "latitude": -25.450316, "longitude": -49.232828 },
+					{ "latitude": -25.450596, "longitude": -49.232078 },
+					{ "latitude": -25.450796, "longitude": -49.232159 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 5,
+			"name": "Laboratório da CT",
+			"code": "LAB-CT",
+			"entrances": [ {"latitude": -25.451394, "longitude": -49.231124 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.451431, "longitude": -49.231464 },
+					{ "latitude": -25.451271, "longitude": -49.231383 },
+					{ "latitude": -25.451476, "longitude": -49.230838 },
+					{ "latitude": -25.451629, "longitude": -49.230903 },
+					{ "latitude": -25.451431, "longitude": -49.231464 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 6,
+			"name": "Departamento de Informática",
+			"code": "DINF",
+			"entrances": [ {"latitude": -25.450763, "longitude": -49.231943 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450284, "longitude": -49.231754 },
+					{ "latitude": -25.450381, "longitude": -49.231517 },
+					{ "latitude": -25.450969, "longitude": -49.231779 },
+					{ "latitude": -25.450882, "longitude": -49.232035 },
+					{ "latitude": -25.450284, "longitude": -49.231754 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 7,
+			"name": "Restaurante Universitário Poli",
+			"code": "RUPOLI",
+			"entrances": [ {"latitude": -25.449636, "longitude": -49.234894 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.449097, "longitude": -49.235188 },
+					{ "latitude": -25.449266, "longitude": -49.234764 },
+					{ "latitude": -25.449721, "longitude": -49.234952 },
+					{ "latitude": -25.449591, "longitude": -49.235416 },
+					{ "latitude": -25.449097, "longitude": -49.235188 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 8,
+			"name": "Setor de Química",
+			"code": "PQ",
+			"entrances": [ {"latitude": -25.450005, "longitude": -49.235055 } ],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450035, "longitude": -49.235325 },
+					{ "latitude": -25.450120, "longitude": -49.235098 },
+					{ "latitude": -25.450262, "longitude": -49.235163 },
+					{ "latitude": -25.450075, "longitude": -49.235663 },
+					{ "latitude": -25.450232, "longitude": -49.235734 },
+					{ "latitude": -25.450828, "longitude": -49.234132 },
+					{ "latitude": -25.450671, "longitude": -49.234061 },
+					{ "latitude": -25.450275, "longitude": -49.235124 },
+					{ "latitude": -25.450137, "longitude": -49.235061 },
+					{ "latitude": -25.450531, "longitude": -49.234004 },
+					{ "latitude": -25.450421, "longitude": -49.233953 },
+					{ "latitude": -25.449929, "longitude": -49.235276 },
+					{ "latitude": -25.450035, "longitude": -49.235325 }
+				]
+			},
+			"campus_id": 1
+		},
+		{
+			"id": 9,
+			"name": "Complexo Espinha de Peixe",
+			"code": "EP",
+			"entrances": [
+			{ "latitude": -25.450833, "longitude": -49.232448 },
+			{ "latitude": -25.451219, "longitude": -49.232648 },
+			{ "latitude": -25.451789, "longitude": -49.232907 },
+			{ "latitude": -25.451327, "longitude": -49.232359 },
+			{ "latitude": -25.451119, "longitude": -49.232604 },
+			{ "latitude": -25.452476, "longitude": -49.233174 },
+			{ "latitude": -25.452178, "longitude": -49.232913 },
+			{ "latitude": -25.451494, "longitude": -49.232650 },
+			{ "latitude": -25.451163, "longitude": -49.232531 },
+			{ "latitude": -25.451890, "longitude": -49.232953 },
+			{ "latitude": -25.452561, "longitude": -49.233260 },
+			{ "latitude": -25.451134, "longitude": -49.232565 },
+			{ "latitude": -25.451509, "longitude": -49.232610 },
+			{ "latitude": -25.452163, "longitude": -49.232952 },
+			{ "latitude": -25.452839, "longitude": -49.233261 },
+			{ "latitude": -25.451803, "longitude": -49.232869 },
+			{ "latitude": -25.452854, "longitude": -49.233222 }
+			],
+			"polygon": {
+				"coordinates": [
+					{ "latitude": -25.450769, "longitude": -49.232619 },
+					{ "latitude": -25.451006, "longitude": -49.231993 },
+					{ "latitude": -25.451208, "longitude": -49.232080 },
+					{ "latitude": -25.451044, "longitude": -49.232514 },
+					{ "latitude": -25.451147, "longitude": -49.232560 },
+					{ "latitude": -25.451308, "longitude": -49.232134 },
+					{ "latitude": -25.451388, "longitude": -49.232165 },
+					{ "latitude": -25.451320, "longitude": -49.232353 },
+					{ "latitude": -25.451370, "longitude": -49.232372 },
+					{ "latitude": -25.451502, "longitude": -49.232019 },
+					{ "latitude": -25.451602, "longitude": -49.232064 },
+					{ "latitude": -25.451416, "longitude": -49.232564 },
+					{ "latitude": -25.451521, "longitude": -49.232611 },
+					{ "latitude": -25.451588, "longitude": -49.232430 },
+					{ "latitude": -25.451669, "longitude": -49.232468 },
+					{ "latitude": -25.451609, "longitude": -49.232629 },
+					{ "latitude": -25.451650, "longitude": -49.232671 },
+					{ "latitude": -25.451785, "longitude": -49.232312 },
+					{ "latitude": -25.451886, "longitude": -49.232361 },
+					{ "latitude": -25.451716, "longitude": -49.232822 },
+					{ "latitude": -25.451816, "longitude": -49.232869 },
+					{ "latitude": -25.451976, "longitude": -49.232438 },
+					{ "latitude": -25.452060, "longitude": -49.232475 },
+					{ "latitude": -25.451992, "longitude": -49.232655 },
+					{ "latitude": -25.452040, "longitude": -49.232677 },
+					{ "latitude": -25.452175, "longitude": -49.232320 },
+					{ "latitude": -25.452278, "longitude": -49.232371 },
+					{ "latitude": -25.452092, "longitude": -49.232865 },
+					{ "latitude": -25.452192, "longitude": -49.232916 },
+					{ "latitude": -25.452261, "longitude": -49.232734 },
+					{ "latitude": -25.452341, "longitude": -49.232774 },
+					{ "latitude": -25.452282, "longitude": -49.232931 },
+					{ "latitude": -25.452321, "longitude": -49.232972 },
+					{ "latitude": -25.452456, "longitude": -49.232614 },
+					{ "latitude": -25.452557, "longitude": -49.232664 },
+					{ "latitude": -25.452387, "longitude": -49.233126 },
+					{ "latitude": -25.452487, "longitude": -49.233180 },
+					{ "latitude": -25.452649, "longitude": -49.232750 },
+					{ "latitude": -25.452727, "longitude": -49.232787 },
+					{ "latitude": -25.452659, "longitude": -49.232964 },
+					{ "latitude": -25.452713, "longitude": -49.232989 },
+					{ "latitude": -25.452846, "longitude": -49.232632 },
+					{ "latitude": -25.452944, "longitude": -49.232676 },
+					{ "latitude": -25.452758, "longitude": -49.233179 },
+					{ "latitude": -25.452864, "longitude": -49.233226 },
+					{ "latitude": -25.452929, "longitude": -49.233046 },
+					{ "latitude": -25.453008, "longitude": -49.233080 },
+					{ "latitude": -25.452948, "longitude": -49.233239 },
+					{ "latitude": -25.452993, "longitude": -49.233284 },
+					{ "latitude": -25.453125, "longitude": -49.232924 },
+					{ "latitude": -25.453224, "longitude": -49.232969 },
+					{ "latitude": -25.452846, "longitude": -49.233980 },
+					{ "latitude": -25.452747, "longitude": -49.233932 },
+					{ "latitude": -25.452879, "longitude": -49.233578 },
+					{ "latitude": -25.452833, "longitude": -49.233554 },
+					{ "latitude": -25.452766, "longitude": -49.233730 },
+					{ "latitude": -25.452688, "longitude": -49.233696 },
+					{ "latitude": -25.452847, "longitude": -49.233261 },
+					{ "latitude": -25.452744, "longitude": -49.233220 },
+					{ "latitude": -25.452567, "longitude": -49.233677 },
+					{ "latitude": -25.452468, "longitude": -49.233638 },
+					{ "latitude": -25.452599, "longitude": -49.233277 },
+					{ "latitude": -25.452553, "longitude": -49.233255 },
+					{ "latitude": -25.452482, "longitude": -49.233434 },
+					{ "latitude": -25.452406, "longitude": -49.233399 },
+					{ "latitude": -25.452475, "longitude": -49.233218 },
+					{ "latitude": -25.452366, "longitude": -49.233171 },
+					{ "latitude": -25.452176, "longitude": -49.233667 },
+					{ "latitude": -25.452078, "longitude": -49.233620 },
+					{ "latitude": -25.452211, "longitude": -49.233270 },
+					{ "latitude": -25.452160, "longitude": -49.233246 },
+					{ "latitude": -25.452092, "longitude": -49.233427 },
+					{ "latitude": -25.452013, "longitude": -49.233392 },
+					{ "latitude": -25.452178, "longitude": -49.232960 },
+					{ "latitude": -25.452071, "longitude": -49.232911 },
+					{ "latitude": -25.451894, "longitude": -49.233375 },
+					{ "latitude": -25.451796, "longitude": -49.233331 },
+					{ "latitude": -25.451931, "longitude": -49.232974 },
+					{ "latitude": -25.451879, "longitude": -49.232950 },
+					{ "latitude": -25.451812, "longitude": -49.233128 },
+					{ "latitude": -25.451734, "longitude": -49.233093 },
+					{ "latitude": -25.451802, "longitude": -49.232914 },
+					{ "latitude": -25.451693, "longitude": -49.232863 },
+					{ "latitude": -25.451507, "longitude": -49.233362 },
+					{ "latitude": -25.451409, "longitude": -49.233317 },
+					{ "latitude": -25.451541, "longitude": -49.232963 },
+					{ "latitude": -25.451489, "longitude": -49.232940 },
+					{ "latitude": -25.451423, "longitude": -49.233122 },
+					{ "latitude": -25.451345, "longitude": -49.233087 },
+					{ "latitude": -25.451506, "longitude": -49.232657 },
+					{ "latitude": -25.451397, "longitude": -49.232607 },
+					{ "latitude": -25.451221, "longitude": -49.233071 },
+					{ "latitude": -25.451125, "longitude": -49.233024 },
+					{ "latitude": -25.451262, "longitude": -49.232669 },
+					{ "latitude": -25.451208, "longitude": -49.232644 },
+					{ "latitude": -25.451141, "longitude": -49.232826 },
+					{ "latitude": -25.451066, "longitude": -49.232789 },
+					{ "latitude": -25.451133, "longitude": -49.232610 },
+					{ "latitude": -25.451019, "longitude": -49.232560 },
+					{ "latitude": -25.450963, "longitude": -49.232710 },
+					{ "latitude": -25.450769, "longitude": -49.232619 }
+				]
+			},
+			"campus_id": 1
+		}
+	]
 }

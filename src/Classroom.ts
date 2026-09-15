@@ -17,7 +17,7 @@ type ClassroomWithAccess_t = {
   floor: number;
   building_id: number;
   building_name: string;
-  building_entrance: Coordinate_t;
+  building_entrances: Coordinate_t[];
 };
 
 export class Classroom {
@@ -57,7 +57,7 @@ export class Classroom {
       floor: result.floor,
       building_id: building.id,
       building_name: building.name,
-      building_entrance: building.entrance,
+      building_entrances: building.entrances,
     };
   }
 
