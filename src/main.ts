@@ -3,40 +3,47 @@ import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
 import { IndoorGraph } from "./IndoorGraph.ts";
 import { Classroom } from "./Classroom.ts";
+import { Building } from "./Building.ts";
 import { formatDuration, addSecondsToCurrentTime } from "./timeUtils.ts";
 
-const mapaLeaflet = L.map("map").setView([-25.450223, -49.233239], 16);
+const mapLeaflet = L.map("map").setView([-25.450223, -49.233239], 16);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
-}).addTo(mapaLeaflet);
+}).addTo(mapLeaflet);
 
-const map = new Map(mapaLeaflet);
+const map = new Map(mapLeaflet);
 
 map.watchUserPosition();
 
-const sala = Classroom.find(Classroom.getSuggestions("lab.12dinf")[0].name);
-const destino = Classroom.find(Classroom.getSuggestions("ct15")[0].name);
+const origin = Classroom.find(Classroom.getSuggestions("ct5")[0].name);
+const destiny = Classroom.find(Classroom.getSuggestions("ph11")[0].name);
 
-if (sala && destino) {
-  if (destino.floor != 0) {
-    const escada = await IndoorGraph.findNearestStair(destino.building_id, destino.building_entrance);
-    if (escada) {
-      console.log(escada);
-      map.addMarker(escada.coordinate, "Escada");
+if (origin && destiny) {
+  const originEntrance = Building.getNearestEntrance(origin.building_id, origin.coordinate);
+  // entra no prédio pela entrada mais perto da origem
+  const destinyEntrance = Building.getNearestEntrance(destiny.building_id, origin.coordinate);
+
+  if (originEntrance && destinyEntrance) {
+    if (destiny.floor != 0) {
+      const stair = await IndoorGraph.findNearestStair(destiny.building_id, destinyEntrance);
+      if (stair) {
+        console.log(stair);
+        map.addMarker(stair.coordinate, "Escada");
+      }
     }
-  }
 
-  const salaCorridor = await IndoorGraph.findNearestCorridor(sala.building_id, sala.coordinate);
-  console.log(salaCorridor);
-  if (salaCorridor) map.addMarker(salaCorridor.coordinate, sala.name);
-  map.addMarker(destino.coordinate, destino.name);
+    const originCorridor = await IndoorGraph.findNearestCorridor(origin.building_id, origin.coordinate);
+    console.log(originCorridor);
+    if (originCorridor) map.addMarker(originCorridor.coordinate, origin.name);
+    map.addMarker(destiny.coordinate, destiny.name);
 
-  await map.drawRoute(sala.building_entrance, destino.building_entrance);
+    await map.drawRoute(originEntrance, destinyEntrance);
 
-  if (map.routeDuration && map.routeDistance) {
-    console.log("Tempo: " + formatDuration(map.routeDuration));
-    console.log("Tempo de chegada: " + addSecondsToCurrentTime(map.routeDuration));
-    console.log("Distância: " + map.routeDistance + " m");
+    if (map.routeDuration && map.routeDistance) {
+      console.log("Tempo: " + formatDuration(map.routeDuration));
+      console.log("Tempo de chegada: " + addSecondsToCurrentTime(map.routeDuration));
+      console.log("Distância: " + map.routeDistance + " m");
+    }
   }
 }

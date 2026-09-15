@@ -17,7 +17,7 @@ type ClassroomWithAccess_t = {
   floor: number;
   building_id: number;
   building_name: string;
-  building_entrance: Coordinate_t;
+  building_entrances: Coordinate_t[];
 };
 
 export class Classroom {
@@ -49,9 +49,6 @@ export class Classroom {
     const building = Building.getById(result.building_id);
     if (!building) return null;
 
-    const entrance = Building.getNearestEntrance(building.id, result.coordinate);
-    if (!entrance) return null;
-
     return {
       id: result.id,
       name: result.name,
@@ -59,7 +56,7 @@ export class Classroom {
       floor: result.floor,
       building_id: building.id,
       building_name: building.name,
-      building_entrance: entrance,
+      building_entrances: building.entrances,
     };
   }
 
@@ -110,7 +107,8 @@ export class Classroom {
       .trim()
       .toLowerCase()
       .replace(/\s+/g, "")
-      .replace(/[-.]/g, "");
+      .replace(/[-.]/g, "")
+      .replace(/^([a-z]+)0+(\d+)$/, "$1$2");
   }
 
   private static normalizeClassroom(raw: string): string {
