@@ -26,7 +26,10 @@
       "id": 2,
       "name": "Setor de Exatas (velho)",
       "code": "PC",
-      "entrances": [{ "latitude": -25.450754, "longitude": -49.231492 }],
+      "entrances": [
+        { "latitude": -25.450754, "longitude": -49.231492 },
+        { "latitude": -25.450679, "longitude": -49.231449 }
+      ],
       "polygon": {
         "coordinates": [
           { "latitude": -25.450996, "longitude": -49.231628 },
@@ -42,7 +45,10 @@
       "id": 3,
       "name": "Ciências da Terra",
       "code": "CT",
-      "entrances": [{ "latitude": -25.451399, "longitude": -49.231772 }],
+      "entrances": [
+        { "latitude": -25.451399, "longitude": -49.231772 },
+        { "latitude": -25.451478, "longitude": -49.231828 }
+      ],
       "polygon": {
         "coordinates": [
           { "latitude": -25.451159, "longitude": -49.231708 },
