@@ -33,6 +33,14 @@ const markerOptions: L.TooltipOptions = {
   offset: [-15, -5],
 };
 
+const userMarkerOptions: L.CircleMarkerOptions = {
+  radius: 8,
+  color: "#FFFFFF",
+  weight: 2,
+  fillColor: "#007EA7",
+  fillOpacity: 1,
+};
+
 const routeOptions: L.GeoJSONOptions = {
   style: {
     color: "#007EA7",
@@ -47,7 +55,7 @@ const ROUTE_STEP_WEIGHT = 15; // metros "equivalentes" por step no cálculo de r
 
 export class Map {
   private map: L.Map;
-  private _userMarker: L.Marker | null = null;
+  private _userMarker: L.CircleMarker | null = null;
   private _userCoords: Coordinate_t | null = null;
   private _route: L.GeoJSON | null = null;
   private _routeData: Route | null = null;
@@ -104,7 +112,7 @@ export class Map {
         if (this._userMarker) this._userMarker.setLatLng([coord.latitude, coord.longitude]);
         else {
           // TODO: Mudar icone do marcador de usuario
-          const marker = L.marker([coord.latitude, coord.longitude]).bindTooltip("Você", markerOptions);
+          const marker = L.circleMarker([coord.latitude, coord.longitude], userMarkerOptions).bindTooltip("Você");
           marker.addTo(this.map);
           this.map.setView([coord.latitude, coord.longitude], DEFAULT_ZOOM, { animate: true });
           this._userMarker = marker;
